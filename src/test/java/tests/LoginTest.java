@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,10 +21,11 @@ public class LoginTest extends BaseTest {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     ConfigReader configReader = new ConfigReader();
+    LoginPage loginPage;
 
     @Test
     public void testSuccessfulLogin() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(driver);
         // Get valid email id and password values from config.properties file
         String email = configReader.getProperty("validEmail");
         String password = configReader.getProperty("validPassword");

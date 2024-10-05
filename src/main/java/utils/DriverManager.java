@@ -33,7 +33,6 @@ public class DriverManager {
                     driver.set(new FirefoxDriver(firefoxOptions));
                     break;
                 case "safari":
-                    WebDriverManager.safaridriver();
                     driver.set(new SafariDriver());
                     break;
                 default:
